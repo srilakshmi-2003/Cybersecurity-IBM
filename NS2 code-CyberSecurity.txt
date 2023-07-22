@@ -1,5 +1,5 @@
 #create a simulator
-se ns[new simulator]
+se ns[new Simulator]
 
 #create trace file
 set tracefile[open dos.tr w]
@@ -27,10 +27,10 @@ set client2 [$ns node]
 set attacker [$ns node]
 
 #connection
-$ns duplex-line $client1 $server1 12Mb 100ms DropTail
-$ns duplex-line $client2 $server1 12Mb 100ms DropTail
-$ns duplex-line $attacker $server1 12Mb 100ms DropTail
-$ns duplex-line $server1 $server2 6Mb 200ms DropTail
+$ns duplex-link $client1 $server1 12Mb 100ms DropTail
+$ns duplex-link $client2 $server1 12Mb 100ms DropTail
+$ns duplex-link $attacker $server1 12Mb 100ms DropTail
+$ns duplex-link $server1 $server2 6Mb 200ms DropTail
 
 $ns queue-limit $server1 server2 20
 
